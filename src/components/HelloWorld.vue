@@ -120,6 +120,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import { ITest } from './test';
 
 @Options({
   props: {
@@ -128,6 +129,12 @@ import { Options, Vue } from "vue-class-component";
 })
 export default class HelloWorld extends Vue {
   msg!: string;
+
+  obj?: ITest;
+
+  get fun() {
+    return this.obj?.field1;
+  }
 }
 </script>
 
